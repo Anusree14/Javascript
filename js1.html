@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<title>calculator</title>
+	<style>
+		body{
+			margin: 50px;
+		}
+		.col{
+            padding: 20px;
+		}
+		.operation{
+			margin-top: 30px;
+		}
+		.button{
+			text-align: center;
+			background-color: green;
+			margin-top: 30px;
+		}
+		.result-text{
+			margin-top: 30px;
+		}
+		.form-inline input{
+			margin-left: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+        function calc()
+        {
+        	var n1,n2,r,opertor;
+            n1=document.getElementById('first').value;
+            n2=document.getElementById('second').value;
+            operator=document.getElementById('operator').value;
+            switch(operator) 
+            {
+            	case '+':
+            	r=parseInt(n1)+parseInt(n2);
+                document.getElementById('result').value=r;
+                break;
+
+                case '-':
+            	r=parseInt(n1)-parseInt(n2);
+                document.getElementById('result').value=r;
+                break;
+
+                case '*':
+            	r=parseInt(n1)*parseInt(n2);
+                document.getElementById('result').value=r;
+                break;
+
+                case '/':
+            	r=parseInt(n1)/parseInt(n2);
+                document.getElementById('result').value=r;
+                break;
+            }
+        }
+    </script>
+
+	<div class="container">
+		<div class="row">
+			<div class="col col-sm-8 col-md-4 offset-md-4">
+				<div class="heading" style="text-align: center;">
+	        <h1>Simple Calculator</h1>
+	    </div>
+	    <div class="operation">
+	        <label for="first">First Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input class="f_num" type="text" name="n1" id="first"><br><br>
+            <label for="second">Second Number:&nbsp;&nbsp;&nbsp;</label>
+            <input class="s_num" type="text" name="n2" id="second"><br><br>
+            <label for="operators">Opertors:&nbsp;&nbsp;&nbsp;</label> 
+            <select id="operator" class="text">
+							<option>+</option>
+							<option>-</option>
+							<option>*</option>
+							<option>/</option>
+						</select>
+						<div class="button">
+                <button class="btn btn sucess"onclick="calc()">check result</button>
+            </div><br>
+            <div class="result-text form-inline justify-content-center">
+						<label for="result">Result : </label>
+						<input class="form-control form-control-sm" type="text" name="n3" id="result">
+					</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
